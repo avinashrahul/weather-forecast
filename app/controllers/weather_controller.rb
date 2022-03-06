@@ -2,10 +2,11 @@ class WeatherController < ApplicationController
   FAHRENHEIT_UNIT = 'Fahrenheit'
   CELSIUS_UNIT = 'Celsius'
 
+  def new; end
+
   # https://openweathermap.org/current#zip
-  # 
   def zipcode
-    validate_params
+    return @error_message unless validate_params
     @measurement_degree = get_degree_of_measurement
     @current_weather_data = get_current_weather
     @weather_forecast_data = get_weather_forecast
@@ -37,7 +38,11 @@ class WeatherController < ApplicationController
   end
 
   def validate_params
-    @error_message = 'please enter a valid US 5 digit zipcode' and return if permitted_params[:zipcode].blank?
+    if permitted_params[:zipcode].blank?
+      @error_message = 'please enter a valid US 5 digit zipcode'
+      return false
+    end
+    true
   end
 
   def make_http_get_call(url)

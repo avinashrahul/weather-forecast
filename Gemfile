@@ -29,4 +29,10 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'pry-rails'
   gem 'listen'
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'webmock'
+  gem 'vcr'
 end

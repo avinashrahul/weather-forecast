@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  root 'weather#zipcode'
+  root 'weather#new'
   get '/zipcode', to: 'weather#zipcode'
 end

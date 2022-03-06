@@ -8,3 +8,6 @@ development:
   <<: *default
   database: weather_forecast_development
 
+test:
+  <<: *default
+  database: weather_forecast_test
