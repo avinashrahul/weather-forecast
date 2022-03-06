@@ -1,0 +1,20 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container text-center">
+    <h1 class="display-5">Get Weather Report</h1>
+    <%= form_tag zipcode_path, class: 'col-lg-6 offset-lg-3', method: :get do %>
+      <div class="row justify-content-center">
+        <label> Zipcode </label>
+        <%= text_field_tag 'zipcode', nil, placeholder: 'Enter 5-digit US zip code', class: "form-control mx-sm-5" %>
+      </div>
+      <br/>
+      <div class="row justify-content-center">
+        <label> Select Measurement Unit </label>
+        <%= select_tag "measurement_unit", raw("<option>#{WeatherController::FAHRENHEIT_UNIT}</option><option>#{WeatherController::CELSIUS_UNIT}</option>"), prompt: "Select..", class: "form-control mx-sm-5"%>
+      </div>
+      <br/>
+      <div>
+        <%= submit_tag 'Search', class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

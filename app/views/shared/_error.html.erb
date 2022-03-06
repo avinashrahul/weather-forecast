@@ -1,0 +1,3 @@
+<% error_message ||= '' %>
+
+<div id="error-message" class="alert alert-danger <%= error_message.present? ? 'show' : 'hide' %>" role="alert"><%= error_message %></div>

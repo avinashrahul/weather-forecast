@@ -1,0 +1,19 @@
+<div id="current-weather" class="card text-center">
+  <div class="card-header">
+    Forecasted weather
+  </div>
+</div>
+<br/>
+<div id="forecast" class="card-columns">
+  <% forecast['list'].each do |forecast| %>
+    <div class="card h-100">
+      <div class="card-header">
+        <span class="date"><%= Time.at(forecast['dt']).strftime("%B %e, %Y, at %I:%M %p" ) %></span>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><%= image_tag "http://openweathermap.org/img/w/" + (forecast['weather'][0]['icon']).html_safe + ".png" %> <%= forecast['main']['temp'] %> <%= measurement_degree %>,  <%= forecast['weather'][0]['main']%></h5>
+        <p class="card-text"><span class="description"><%= forecast['weather'][0]['description']%> | </span><span class="high">High: <%= forecast['main']['temp_max'] %> <%= measurement_degree %></span> | <span class="high">Low: <%= forecast['main']['temp_min'] %> <%= measurement_degree %></span></p>
+      </div>
+    </div>
+  <%end %>
+</div>

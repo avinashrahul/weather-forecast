@@ -1,0 +1,10 @@
+<div id="current-weather" class="card text-center">
+  <div class="card-header">
+    Today's weather in <span class="city"><%= current_weather['name'] %>, <%= current_weather['sys']['country'] %></span> | <span class="date"><%= Time.at(current_weather['dt']).to_formatted_s(:long) %></span>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">  <%= image_tag "http://openweathermap.org/img/w/" + (current_weather['weather'][0]['icon']).html_safe + ".png" %> <%= current_weather['main']['temp'] %> <%= measurement_degree %>,  <%= current_weather['weather'][0]['main']%></h5>
+    <p class="card-text"> </span><span class="high">High: <%= current_weather['main']['temp_max'] %> <%= measurement_degree %></span> | <span class="high">Low: <%= current_weather['main']['temp_min'] %> <%= measurement_degree %></span> | <span class="description"><%= current_weather['weather'][0]['description']%></p>
+    <span class="sunrise"> Sunrise: <%= Time.at(current_weather['sys']['sunrise']).to_formatted_s(:long) %></span> | <span class="sunset"> Sunset: <%= Time.at(current_weather['sys']['sunset']).to_formatted_s(:long) %></span>
+  </div>
+</div>
