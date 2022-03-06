@@ -14,7 +14,7 @@ This leverages actual weather data from https://openweathermap.org/. To use this
 ### Functionality
 1. Fetches current weather and forecasted weather based on Zipcode.
 2. User can select his measurement either Celsius/Fahrenheit based on their convenience.
-3. Weather and Forecast data is stored in cache for 30 minutes based on Zipcode and measurement lookup which can be configurable.
+3. Weather and Forecast data is stored in cache for 30 minutes based on `Zipcode and measurement` lookup which can be configurable.
 4. Specs are written by leveraging VCR to test the actual API functionality.
 5. This uses `.env` to handle environment variables.
 
