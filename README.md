@@ -17,6 +17,7 @@ This leverages actual weather data from https://openweathermap.org/. To use this
 3. Weather and Forecast data is stored in cache for 30 minutes based on `Zipcode and measurement` lookup which can be configurable.
 4. Specs are written by leveraging VCR to test the actual API functionality.
 5. This uses `.env` to handle environment variables.
+6. It has a display indicator to the end user if results are pulled from cache.
 
 ![Screen Shot 2022-03-06 at 5 30 40 PM](https://user-images.githubusercontent.com/8624234/156944959-3da9cb6c-ff71-4fcc-8be5-b52fa1ba0652.png)
 
