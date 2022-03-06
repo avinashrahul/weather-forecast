@@ -2,3 +2,6 @@
 .DS_Store
 .env
 master.key
+log/*
+tmp/cache
+tmp/pids

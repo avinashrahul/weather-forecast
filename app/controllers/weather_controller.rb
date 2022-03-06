@@ -22,13 +22,19 @@ class WeatherController < ApplicationController
   end
 
   def get_current_weather
-    weather_url = ENV['OPEN_WEATHER_MAP_URL'] + "/data/2.5/weather?zip=#{params[:zipcode]},us&appid=#{ENV['OPENWEATHERMAP_APPID']}&units=#{get_units_of_measurement}"
-    make_http_get_call(weather_url)
+    cache_key = "get_current_weather_#{permitted_params[:zipcode]}_#{get_units_of_measurement}"
+    Rails.cache.fetch(cache_key, expires_in: 30.minutes) do
+      weather_url = ENV['OPEN_WEATHER_MAP_URL'] + "/data/2.5/weather?zip=#{permitted_params[:zipcode]},us&appid=#{ENV['OPENWEATHERMAP_APPID']}&units=#{get_units_of_measurement}"
+      make_http_get_call(weather_url)
+    end
   end
 
   def get_weather_forecast
-    forecast_url = ENV['OPEN_WEATHER_MAP_URL'] + "/data/2.5/forecast?zip=#{params[:zipcode]},us&cnt=9&appid=#{ENV['OPENWEATHERMAP_APPID']}&units=#{get_units_of_measurement}"
-    make_http_get_call(forecast_url)
+    cache_key = "get_weather_forecast_#{permitted_params[:zipcode]}_#{get_units_of_measurement}"
+    Rails.cache.fetch(cache_key, expires_in: 30.minutes) do
+      forecast_url = ENV['OPEN_WEATHER_MAP_URL'] + "/data/2.5/forecast?zip=#{permitted_params[:zipcode]},us&cnt=9&appid=#{ENV['OPENWEATHERMAP_APPID']}&units=#{get_units_of_measurement}"
+      make_http_get_call(forecast_url)
+    end
   end
 
   private
