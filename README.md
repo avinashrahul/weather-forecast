@@ -18,6 +18,9 @@ This leverages actual weather data from https://openweathermap.org/. To use this
 4. Specs are written by leveraging VCR to test the actual API functionality.
 5. This uses `.env` to handle environment variables.
 
+![Screen Shot 2022-03-06 at 5 30 40 PM](https://user-images.githubusercontent.com/8624234/156944959-3da9cb6c-ff71-4fcc-8be5-b52fa1ba0652.png)
+
+
 
 ### Steps to Run
 1. Clone the application
