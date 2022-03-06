@@ -8,7 +8,7 @@
       </div>
       <br/>
       <div class="row justify-content-center">
-        <label> Select Measurement Unit </label>
+        <label> Select Measurement </label>
         <%= select_tag "measurement_unit", raw("<option>#{WeatherController::FAHRENHEIT_UNIT}</option><option>#{WeatherController::CELSIUS_UNIT}</option>"), prompt: "Select..", class: "form-control mx-sm-5"%>
       </div>
       <br/>

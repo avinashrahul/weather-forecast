@@ -1,4 +1,9 @@
 <div id="current-weather" class="card text-center">
+  <% if is_cached %>
+    <div class="alert alert-warning" role="alert">
+      <span>Weather report is pulled from cache.</span>
+    </div>
+  <%end %>
   <div class="card-header">
     Today's weather in <span class="city"><%= current_weather['name'] %>, <%= current_weather['sys']['country'] %></span> | <span class="date"><%= Time.at(current_weather['dt']).to_formatted_s(:long) %></span>
   </div>
