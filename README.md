@@ -33,6 +33,9 @@ OPENWEATHERMAP_APPID=XXX
 RAILS_MASTER_KEY=XXX
 OPEN_WEATHER_MAP_URL=http://api.openweathermap.org
 ```
+
+We can enhance the current functionality by providing `City/State/Zip` as an option to fetch the Weather report.
+
 **Note**: If you face issues running the application or have any questions. Please reach out to - `rahulgudimetla99@gmail.com`
 
 Thanks!
