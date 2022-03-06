@@ -7,6 +7,7 @@ class WeatherController < ApplicationController
 
   def zipcode
     return @error_message unless validate_params
+    Rails.logger.info("Request received for Zipcode #{permitted_params[:zipcode]}")
     @is_cached = false
     @measurement_degree = get_degree_of_measurement
     @current_weather_data = get_current_weather
